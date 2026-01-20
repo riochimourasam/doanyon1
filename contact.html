@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - DOANYON AFRICA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: #FFD700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #FFD700 0%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #a3a3a3;
+            font-size: 1.1rem;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateX(10px);
+        }
+
+        .icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFD700;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+        }
+
+        .form-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        option {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: #FFD700;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 968px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            input, select, textarea {
+                font-size: 16px;
+            }
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #FFD700;
+            color: #0a0a0a;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .success-message {
+            display: none;
+            padding: 1rem;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid #22c55e;
+            border-radius: 10px;
+            color: #22c55e;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .error-message {
+            display: none;
+            padding: 1rem;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid #ef4444;
+            border-radius: 10px;
+            color: #ef4444;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+        
+        <div class="header">
+            <div class="logo">⚡</div>
+            <h1>Contactez-nous</h1>
+            <p class="subtitle">Nous sommes disponibles 24/7 pour répondre à vos besoins</p>
+        </div>
+
+        <div class="content">
+            <div class="form-section">
+                <div class="success-message" id="successMessage">
+                    ✅ Message envoyé avec succès ! Nous vous contacterons bientôt.
+                </div>
+                <div class="error-message" id="errorMessage">
+                    ❌ Une erreur s'est produite. Veuillez réessayer.
+                </div>
+
+                <form id="contactForm" action="https://formsubmit.co/doanyonafrica@gmail.com" method="POST">
+                    <!-- Configuration FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nouveau message depuis DOANYON AFRICA">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://www.electroinfo.online/merci.html">
+
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="Nom" required placeholder="Votre nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="Prénom" required placeholder="Votre prénom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero">Numéro de téléphone *</label>
+                        <input type="tel" id="numero" name="Numéro" required placeholder="+228 XX XX XX XX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="provenance">D'où nous écrivez-vous ? *</label>
+                        <select id="provenance" name="Provenance" required>
+                            <option value="">-- Choisissez votre pays --</option>
+                            <option value="Togo 🇹🇬">🇹🇬 Togo</option>
+                            <option value="Bénin 🇧🇯">🇧🇯 Bénin</option>
+                            <option value="Ghana 🇬🇭">🇬🇭 Ghana</option>
+                            <option value="Côte d'Ivoire 🇨🇮">🇨🇮 Côte d'Ivoire</option>
+                            <option value="Burkina Faso 🇧🇫">🇧🇫 Burkina Faso</option>
+                            <option value="Niger 🇳🇪">🇳🇪 Niger</option>
+                            <option value="Mali 🇲🇱">🇲🇱 Mali</option>
+                            <option value="Sénégal 🇸🇳">🇸🇳 Sénégal</option>
+                            <option value="Guinée 🇬🇳">🇬🇳 Guinée</option>
+                            <option value="Nigéria 🇳🇬">🇳🇬 Nigéria</option>
+                            <option value="Cameroun 🇨🇲">🇨🇲 Cameroun</option>
+                            <option value="Gabon 🇬🇦">🇬🇦 Gabon</option>
+                            <option value="Congo 🇨🇬">🇨🇬 Congo</option>
+                            <option value="RD Congo 🇨🇩">🇨🇩 RD Congo</option>
+                            <option value="France 🇫🇷">🇫🇷 France</option>
+                            <option value="Belgique 🇧🇪">🇧🇪 Belgique</option>
+                            <option value="Suisse 🇨🇭">🇨🇭 Suisse</option>
+                            <option value="Canada 🇨🇦">🇨🇦 Canada</option>
+                            <option value="États-Unis 🇺🇸">🇺🇸 États-Unis</option>
+                            <option value="Autre">🌍 Autre pays</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="canal">Par quel canal souhaitez-vous une réponse ? *</label>
+                        <select id="canal" name="Canal de réponse" required>
+                            <option value="">-- Choisissez un canal --</option>
+                            <option value="Email">📧 Email</option>
+                            <option value="WhatsApp">📱 WhatsApp</option>
+                            <option value="Appel téléphonique">📞 Appel téléphonique</option>
+                            <option value="SMS">💬 SMS</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre message *</label>
+                        <textarea id="message" name="Message" required placeholder="Décrivez votre projet ou votre demande..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">📩 Envoyer le message</button>
+                </form>
+            </div>
+
+            <div class="info-section">
+                <h2 class="info-title">Informations de contact</h2>
+
+                <a href="mailto:doanyonafrica@gmail.com" style="text-decoration: none; color: inherit;">
+                    <div class="contact-item">
+                        <div class="icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>doanyonafrica@gmail.com</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/22892123951" style="text-decoration: none; color: inherit;">
+                    <div class="contact-item">
+                        <div class="icon">📱</div>
+                        <div class="contact-details">
+                            <h3>WhatsApp</h3>
+                            <p>+228 92 12 39 51</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.tiktok.com/@doanyon.africa" style="text-decoration: none; color: inherit;">
+                    <div class="contact-item">
+                        <div class="icon">🎵</div>
+                        <div class="contact-details">
+                            <h3>TikTok</h3>
+                            <p>@doanyon.africa</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="contact-item" style="cursor: default;">
+                    <div class="icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Zone d'intervention</h3>
+                        <p>Togo & Afrique de l'Ouest</p>
+                    </div>
+                </div>
+
+                <div class="contact-item" style="cursor: default;">
+                    <div class="icon">🕐</div>
+                    <div class="contact-details">
+                        <h3>Disponibilité</h3>
+                        <p>24/7 - Service d'urgence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function(e) {
+            // Le formulaire sera soumis normalement via FormSubmit.co
+            // Afficher un message de confirmation avant l'envoi
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.textContent = '📤 Envoi en cours...';
+            submitBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>
